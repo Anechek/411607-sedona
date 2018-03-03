@@ -1,12 +1,106 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <title>HTML Academy: Седона</title>
-  </head>
-  <body>
+	<head>
+    	<meta charset="utf-8">
+    	<title>HTML Academy: Седона</title>
+  	</head>
+  	<body>
+		<header class="main-header">
+	  		<nav class="main-navigation">
+				<a class="main-header-logo"><img src="img/index-logo.svg" width="138" height="70" alt="Логотип «City of Sedona»"></a>
+				<ul class="site-navigation">
+					<li><a href="info.html">ИНФОРМАЦИЯ</a></li>
+					<li><a href="foto_video.html">ФОТО И ВИДЕО</a></li>
+					<li><a href="map.html">КАРТА ШТАТА</a></li>
+					<li><a href="catalog.html">ГОСТИНИЦЫ</a></li>
+				</ul>
+			</nav>
+	  	</header>
+		<main class="container">
+			<h1 class="visually-hidden">Седона</h1>
+			<img src="img/welcome.jpg" alt="Welcome">
+			<img src="img/gorgeus.jpg" alt="to the gorgeus">
+			<img src="img/sedona.jpg" alt="SEDONA">
+			<img src="img/because.jpg" alt="Because the Grand Canyon sucks!">
+			<b class="slogan-main">СЕДОНА - НЕБОЛЬШОЙ ГОРОДОК В АРИЗОНЕ, ЗАСЛУЖИВАЮЩИЙ БОЛЬШЕГО!</b>
 
-    <p>Репозиторий создан для обучения на интенсивном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">Профессиональный HTML и CSS, уровень 1</a>».</p>
+			<section class="reasons">
+				<h2>РАССМОТРИМ 5 ПРИЧИН, ПО КОТОРЫМ СЕДОНА КРУЧЕ, ЧЕМ ГРАНД КАНЬОН!</h2>
+				<ul class="reasons-list">
+					<li class="reasons-item">
+						<h3>НАСТОЯЩИЙ ГОРОДОК</h3>
+						<span>— №1 —</span>
+						<p>СЕДОНА — НЕ АТТРАКЦИОН ДЛЯ ТУРИСТОВ, ТАМ ТЕЧЕТ СВОЯ ЖИЗНЬ</p>
+						<img src="img/city.jpg" alt="city of Sedona">
+					</li>
+					<li class="reasons-item">
+						<h3>ТАМ ЕСТЬ МОСТ ДЬЯВОЛА</h3>
+						<span>— №2 —</span>
+						<p>ДА, ПО НЕМУ МОЖНО ПРОЙТИ! ЕСЛИ КОНЕЧНО ВЫ ОСМЕЛИТЕСЬ</p>
+						<img src="img/bridge.jpg" alt="devil's bridge">
+					</li>
+					<li class="reasons-item">
+						<h3>НЕБОЛЬШАЯ ПЛОЩАДЬ</h3>
+						<span>— №3 —</span>
+						<p>ВСЕ ДОСТОПРИМЕЧАТЕЛЬНОСТИ 
+						НАХОДЯТСЯ ОЧЕНЬ БЛИЗКО</p>
+					</li>
+					<li class="reasons-item">
+						<h3>КРАСИВАЯ ДОРОГА</h3>
+						<span>— №4 —</span>
+						<p>ЕХАТЬ В СЕДОНУ ИЗ ЛАС-ВЕГАСА СОВСЕМ НЕ СКУЧНО!</p>
+					</li>
+					<li class="reasons-item">
+						<h3>МАЛО ТУРИСТОВ</h3>
+						<span>— №5 —</span>
+						<p>БОЛЬШИНСТВО ЕДЕТ В ГРАНД КАНЬОН И ТОЛПИТСЯ ТАМ</p>
+					</li>
+				</ul>
+			</section>
 
-  </body>
+			<section class="features">
+				<h2 class="visually-hidden">Преимущества</h2>
+				<ul class="features-list">
+					<li class="feature-item">
+						<h3>ЖИЛЬЕ</h3>
+						<p>РЕКОМЕНДУЕМ ПОЖИТЬ В НАСТОЯЩЕМ МОТЕЛЕ, ВСЕ КАК В КИНО!</p>
+					</li>
+					<li class="feature-item">
+						<h3>ЕДА</h3>
+						<p>ВСЕГДА ЗАКАЗЫВАЙТЕ ФИРМЕННЫЙ БУРГЕР,ВЫ НЕ РАЗОЧАРУЕТЕСЬ!</p>
+					</li>
+					<li class="feature-item">
+						<h3>СУВЕНИРЫ</h3>
+						<p>НЕ ТОЛЬКО КИТАЙСКОГО, НО И МЕСТНОГО ПРОИЗВОДСТВА!</p>
+					</li>
+				</ul>
+			</section>
+
+			<section class="appointment">
+				<h2>ЗАИНТЕРЕСОВАЛИСЬ?</h2>
+				<p class="appointment-info">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в седоне</p>
+				<button class="button">ПОИСК ГОСТИНИЦЫ В СЕДОНЕ</button>	
+			</section> 
+
+			<div class="modal modal-search">
+				<!-- Здесь будет форма -->
+			</div>	 		  
+		    <div class="map">
+			    <img src="img/map.jpg" alt="Карта Седоны">
+		    </div>
+		</main>
+		
+	    <footer class="main-footer">
+			<span class="footer-hashtag">#VISITSEDONA</span>
+			<ul class="footer-social">
+				<li><a class="social-button" href="#">Twitter</a></li>
+				<li><a class="social-button" href="#">Facebook</a></li>
+				<li><a class="social-button" href="#">YouTube</a></li>
+			</ul>
+		    <p class="footer-copyright">
+				<b>WEBSITE BY</b> 
+				<a class="logo_HTMLAcademy" href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo_HTMLAcademy.jpg" alt="Логотип HTML Academy"></a>
+		    </p>
+        </footer>
+    </body>
 </html>
