@@ -73,7 +73,30 @@
             <p class="appointment-info">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в седоне</p>
             <div class="modal modal-search">
                 <button class="button">Поиск гостиницы в Седоне</button>
-                <!-- Здесь будет форма -->
+                <form class="search-hotels" method="post" action="https://echo.htmlacademy.ru">
+                    <p class="modal-search-info">
+                        <label for="search-data-arrival">Дата заезда:</label>
+                        <input type="text" id="search-data-arrival" name="date-arrival" placeholder="24 апреля 2017">
+                        <button class="visually-hidden input-calendar" type="button">Календарь</button>
+                    </p>
+                    <p class="modal-search-info">
+                        <label for="search-date-departure">Дата выезда:</label>
+                        <input type="text" id="search-date-departure" name="date-departure" placeholder="4 июля 2017">
+                        <button class="visually-hidden input-calendar" type="button">Календарь</button>
+                    </p>
+                    <p class="modal-search-info">
+                        <label for="search-number-adults">Взрослые:</label>
+                        <button class="visually-hidden input-minus" type="button">-</button>
+                        <input type="text" id="search-number-adults" name="number-adults" placeholder="2">
+                        <button class="visually-hidden input-plus" type="button">+</button>
+                        
+                        <label for="search-number-children">Дети:</label>
+                        <button class="visually-hidden input-minus" type="button">-</button>
+                        <input type="text" id="search-number-children" name="number-children" placeholder="0">
+                        <button class="visually-hidden input-plus" type="button">+</button>  
+                    </p>
+                    <button class="button" type="submit">Найти</button>
+                </form>
             </div>
         </section> 
 
