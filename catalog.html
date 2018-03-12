@@ -57,17 +57,16 @@
                 </fieldset>
                 <p class="filter-price">
                     <b>Стоимость в сутки (р):</b>
-                    <label class="visually-hidden" for="filter-price-from">Укажите минимальную цену</label>
-                    <input class="filter-price-info" id="filter-price-from" type="text" name="price-from" placeholder="От 0">
-                    <label class="visually-hidden" for="filter-price-to">Укажите максимальную цену</label>
-                    <input class="filter-price-info" id="filter-price-to" type="text" name="price-to" placeholder="До 3000">
+                    <label for="filter-price-from">От</label>
+                    <input class="filter-price-info" id="filter-price-from" type="text" name="price-from" value="0">
+                    <label for="filter-price-to">До</label>
+                    <input class="filter-price-info" id="filter-price-to" type="text" name="price-to" value="3000">
                 </p>
-                <div>
-                    <div class="filter-range-total"></div> 
+                <div class="filter-range-total">
                     <div class="filter-range-selected"></div>
                     <button class="visually-hidden fiter-price-button" type="button">Ползунок</button>
                     <button class="visually-hidden fiter-price-button" type="button">Ползунок</button>
-                </div>
+                </div> 
                 <button class="button filter-button" type="submit">Показать</button>
             </form>   
         </div>
@@ -92,8 +91,10 @@
             </div>
             <ul class="results-list">
                 <li class="results-item">
-                    <a href="#">
+                    <a class="results-image" href="#">
                         <img src="img/hotel1.jpg" width="135" height="90" alt="Amara Resort &Spa">
+                    </a>
+                    <a class="results-hotel-name" href="#">
                         <h3>Amara Resort &#38; Spa</h3>
                     </a>
                     <p class="results-type">Гостиница</p>
@@ -109,8 +110,10 @@
                     <a class="button" href="#">Забронировать</a>
                 </li>
                 <li class="results-item">
-                    <a href="#">
-                        <img src="img/hotel2.jpg" width="135" height="90" alt="Desert Quail Inn">
+                    <a class="results-image" href="#">
+                        <img src="img/hotel2.jpg" width="135" height="90" alt="Desert Quail Inn">   
+                    </a>
+                    <a class="results-hotel-name" href="#">
                         <h3>Desert Quail Inn</h3>
                     </a>
                     <p class="results-type">Мотель</p>
@@ -125,8 +128,10 @@
                     <a class="button" href="#">Забронировть</a>
                 </li>
                 <li class="results-item">
-                    <a href="#">
+                    <a class="results-image" href="#">
                         <img src="img/hotel3.jpg" width="135" height="90" alt="Villas at Poco Diablo">    
+                    </a>
+                    <a class="results-hotel-name" href="#">
                         <h3>Villas at Poco Diablo</h3>
                     </a>
                     <p class="results-type">Апартаменты</p>
