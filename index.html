@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
     <header class="main-header">
@@ -18,7 +21,9 @@
     </header>
     <main class="container">
         <h1 class="visually-hidden">Седона</h1>
-        <img src="img/welcome-sedona.png" width="458" height="352" alt="Welcome to the gorgeus Sedona">
+        <div class="logo-wrapper">
+            <img src="img/welcome-sedona.png" width="458" height="352" alt="Welcome to the gorgeus Sedona">
+        </div>
         <div class="slogan-main">Седона - небольшой городок в Аризоне, заслуживающий большего!</div>
 
         <section class="reasons">
@@ -71,7 +76,7 @@
         <section class="appointment">
             <h2>Заинтересовались?</h2>
             <p class="appointment-info">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в седоне</p>
-            <div class="modal modal-search">
+            <div class="modal-search">
                 <button class="button">Поиск гостиницы в Седоне</button>
                 <form class="search-hotels" method="post" action="https://echo.htmlacademy.ru">
                     <p class="modal-search-info">
@@ -95,7 +100,7 @@
                         <input type="text" id="search-number-children" name="number-children" value="0">
                         <button class="visually-hidden input-plus" type="button">+</button>  
                     </p>
-                    <button class="button" type="submit">Найти</button>
+                    <button class="button btn-blue" type="submit">Найти</button>
                 </form>
             </div>
         </section> 

@@ -3,23 +3,25 @@
 <head>
     <meta charset="utf-8">
     <title>Седона</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
-<body>
+<body class="inner-page">
     <header class="main-header">
-        <nav class="main-navigator">
-            <a class="main-header-logo" href="index.html"><img src="img/index-logo.svg" width="138" height="70" alt="Логотип City of Sedona"></a>
+        <nav class="main-navigation">
+            <a class="main-header-logo" href="index.html"><img src="img/index-logo.svg" width="138" height="70"  alt="Логотип City of Sedona"></a>
             <ul class="site-navigation">
                 <li><a href="#">Информация</a></li>
                 <li><a href="#">Фото и видео</a></li>
                 <li><a href="#">Карта штата</a></li>
-                <li><a class="site-navigation-current">Гостиницы</a></li>
+                <li class="site-navigation-current"><a>Гостиницы</a></li>
             </ul>
         </nav>
     </header>
     <main class="container">
         <h1 class="visually-hidden">Гостиницы Седоны</h1>
         <div class="filter">
-            <!-- Здесь будет форма -->
             <form class="filter" method="get" action="https://echo.htmlacademy.ru">
                 <fieldset>
                     <legend>Инфраструктура:</legend>
@@ -55,34 +57,36 @@
                         </li>
                     </ul>
                 </fieldset>
-                <p class="filter-price">
+                <div class="filter-price">
                     <b>Стоимость в сутки (р):</b>
-                    <label for="filter-price-from">От</label>
-                    <input class="filter-price-info" id="filter-price-from" type="text" name="price-from" value="0">
-                    <label for="filter-price-to">До</label>
-                    <input class="filter-price-info" id="filter-price-to" type="text" name="price-to" value="3000">
-                </p>
+                    <div class="filter-price-wrapper">
+                        <label for="filter-price-from">От</label>
+                        <input class="filter-price-info" id="filter-price-from" type="text" name="price-from" value="0">
+                        <label for="filter-price-to">До</label>
+                        <input class="filter-price-info" id="filter-price-to" type="text" name="price-to" value="3000">
+                    </div>
+                </div>
                 <div class="filter-range-total">
                     <div class="filter-range-selected"></div>
                     <button class="visually-hidden fiter-price-button" type="button">Ползунок</button>
                     <button class="visually-hidden fiter-price-button" type="button">Ползунок</button>
                 </div> 
-                <button class="button filter-button" type="submit">Показать</button>
+                <button class="button button-filter" type="submit">Показать</button>
             </form>   
         </div>
 
         <section class="results">
             <h2>Найдено: 3</h2>
-            <div>Сортировка:</div>
+            <p>Сортировка:</p>
             <ul class="sort">
-                <li class="sort-item">
-                    <a class="sort-price" href="#">По цене</a>
+                <li class="sort-item sort-item-current">
+                    <a href="#">По цене</a>
                 </li>
                 <li class="sort-item">
-                    <a class="sort-type" href="#">По типу</a>
+                    <a href="#">По типу</a>
                 </li>
                 <li class="sort-item">
-                    <a class="sort-rating" href="#">По рейтингу</a>
+                    <a href="#">По рейтингу</a>
                 </li>
             </ul>
             <div class="sort-arrow">
@@ -105,8 +109,8 @@
                         <div class="star">*</div>
                         <div class="star">*</div>
                     </div>
-                    <div>Рейтинг 8,5</div>
-                    <a class="button" href="#">Подробнее</a>
+                    <p class="results-rating">Рейтинг 8,5</p>
+                    <a class="button btn-blue" href="#">Подробнее</a>
                     <a class="button" href="#">Забронировать</a>
                 </li>
                 <li class="results-item">
@@ -123,9 +127,9 @@
                         <div class="star">*</div>
                         <div class="star">*</div>
                     </div>
-                    <div>Рейтинг 8,9</div>
-                    <a class="button" href="#">Подробнее</a>
-                    <a class="button" href="#">Забронировть</a>
+                    <p class="results-rating">Рейтинг 8,9</p>
+                    <a class="button btn-blue" href="#">Подробнее</a>
+                    <a class="button" href="#">Забронировать</a>
                 </li>
                 <li class="results-item">
                     <a class="results-image" href="#">
@@ -140,8 +144,8 @@
                         <div class="star">*</div>
                         <div class="star">*</div>
                     </div>
-                    <div>Рейтинг 9,2</div>
-                    <a class="button" href="#">Подробнее</a>
+                    <p class="results-rating">Рейтинг 9,2</p>
+                    <a class="button btn-blue" href="#">Подробнее</a>
                     <a class="button" href="#">Забронировать</a>
                 </li>
             </ul> 
