@@ -75,6 +75,12 @@ a {
     background-color: #ffffff;
 }
 
+.inner-page .button,
+.inner-page .btn-blue {
+    font-size: 14px;
+    line-height: 21px;
+}
+
 /*Основная навигация*/
 
 .main-navigation {
@@ -187,14 +193,13 @@ a {
     border: none;
 }
 
-.modal-search-info input:focus,
 .modal-search-info input:hover {
     background-color: #ebebeb;
 }
     
-.modal-search-info input:active {
+.modal-search-info input:focus {
     background-color: transparent;
-    border: 2px solid #e5e5e5;
+    outline-color: #e5e5e5;
 }
 
 /*Страница каталога*/
@@ -283,19 +288,19 @@ a {
     border: none;
 }
 
-.results h3 {
+.results-hotel-name {
     font-size: 21px;
     line-height: 26px;
     font-weight: 700;
     color: #000000;
 }
 
-.results h3:focus,
-.results h3:hover {
+.results-hotel-name:focus,
+.results-hotel-name:hover {
     color: #81b3d2;
 }
 
-.results h3:active {
+.results-hotel-name:active {
     color: rgba(0, 0, 0, 0.3);
 }
 
