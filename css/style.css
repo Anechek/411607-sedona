@@ -1,7 +1,9 @@
-html,
-body {
-    min-width: 1280px;
-    min-height: 2762px;
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
 body {
@@ -21,13 +23,24 @@ a {
     text-decoration: none;
 }
 
-.visually-hidden {
+img {
+    max-width: 100%;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
     position: absolute;
+
     width: 1px;
     height: 1px;
     margin: -1px;
     border: 0;
     padding: 0;
+
+    white-space: nowrap;
+
+    clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
@@ -103,7 +116,11 @@ a {
 .inner-page .btn-blue {
     font-size: 14px;
     line-height: 21px;
-    padding: 8px 16px;
+    padding: 4px 16px;
+}
+
+.inner-page .btn-blue {
+    margin-right: 4px;
 }
 
 /* ----- Основная навигация ----- */
@@ -118,31 +135,46 @@ a {
 
 .main-header-logo {
     position: absolute;
-    left: 570px;
-    width: 138px;
-    height: 70px;
+    left: 50%;
+    transform: translateX(-50%)
 }
 
 .container {
     width: 1200px;
     margin: 0 auto;
-    padding: 0;
+    
+    box-shadow: 0 0 15px 0 rgba(0, 1, 1, 0.3);
 }
 
 .site-navigation {
     display: flex;
+    flex-wrap: wrap;
     margin: 0;
-    padding: 0;
-    justify-content: space-between;
-    width: 100%;
-    padding-top: 14px;
-    padding-bottom: 16px;
+    padding: 14px 72px 16px;
     
     list-style: none;
 }
 
 .site-navigation a {
+    display: block;
+    
     color: #000000;
+}
+
+.site-navigation li {
+    flex-basis: 240px; 
+}
+
+.site-navigation li:nth-child(-n+2) {
+    text-align: left;
+}
+
+.site-navigation li:nth-child(n+3) {
+    text-align: right;
+}
+
+.site-navigation li:nth-child(2) {
+    margin-right: 95px;
 }
 
 .site-navigation a:hover,
@@ -193,39 +225,77 @@ a {
 }
 
 .reasons-promo {
+    position: relative;
+    z-index: 3;
     font-size: 14px;
     line-height: 26px;
     background-color: #ffffff;
-    margin-bottom: 53px;
+    padding-bottom: 53px;
+    margin-bottom: 0;
 }
 
 .reasons-list {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     margin: 0;
     padding: 0;
-    flex-wrap: wrap;
-    justify-content: space-between;
     
     list-style: none;
 }
 
 .reasons-item {
-    flex-basis: 308px;
-    padding-top: 50px;
-    padding-bottom: 40px;
-    padding-left: 46px;
-    padding-right: 46px;
+    position: relative;
+    flex-basis: 400px;
+    padding: 50px 46px 40px;
     
     background-color: #eeeeee;
+    z-index: 2;
 }
 
-.reasons-first {
+.reasons-city {
+    position: relative;
+    padding-right: 67%;
     order: -2;
 }
 
-.reasons-second {
-    margin-left: 67%;
+.reasons-city::before {
+    content: "";
+  
+    position: absolute;
+    top: -78px;
+    right: 0px;
+  
+    width: 800px;
+    height: 400px;
+    
+    background-color: #8db5d2;
+    background-image: url("../img/reasons-city.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    z-index: 1;
+}
+
+.reasons-bridge {
+    position: relative;
+    padding-left: 67%;
+}
+
+.reasons-bridge::after {
+    content: "";
+  
+    position: absolute;
+    top: -80px;
+    left: 0px;
+  
+    width: 800px;
+    height: 400px;
+  
+    background-color: #8db5d2;
+    background-image: url("../img/reasons-bridge.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    z-index: 1;
 }
 
 .reasons-item-header {
@@ -236,12 +306,15 @@ a {
 }
 
 .reasons-blue {
+    flex-basis: 100%;
     color: #ffffff;
     
     background-color: #81b3d2;
 }
 
 .features-list {
+    position: relative;
+    z-index: 2;
     order: -1;
 }
 
@@ -429,6 +502,7 @@ a {
     font-size: 12px;
     line-height: 18px;
     color: rgba(0, 0, 0, 0.3);
+    
     border-bottom: 1px dotted #81b3d2;
 }
 
@@ -458,7 +532,7 @@ a {
 
 .results-item {
     display: flex;
-    padding-top: 30px;
+    padding: 25px 0;
     border-top: 1px solid #e5e5e5;
 }
 
@@ -467,11 +541,14 @@ a {
 }
 
 .results-image {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
     margin-right: 30px;
 }
 
 .results-hotel-wrapper {
-    flex-basis: 260px;
+    flex-grow: 1;
     margin: 0;
     padding: 0;
 }
@@ -479,7 +556,7 @@ a {
 .results-hotel-name {
     margin: 0;
     padding: 0;
-    
+    margin-bottom: 10px;
     font-size: 21px;
     line-height: 26px;
     font-weight: 700;
@@ -495,21 +572,55 @@ a {
     color: rgba(0, 0, 0, 0.3);
 }
 
-.results-type {
-    margin-right: 38px; 
+.results-hotel-wrapper a {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.results-type-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 185px;
+    margin-bottom: 12px;
 }
 
 .results-rating-wrapper { 
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 120px;
+    justify-content: flex-end;
+    align-content: space-between;
     margin: 0;
     padding: 0;
-    margin-left: 540px;
 }
 
+.star {
+    width: 18px;
+}
+
+.results-stars {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    height: 17px;
+
+    background-image: url("../img/icon-star.svg");
+    background-repeat: space;
+    background-size: 18px 17px;
+ }
+
 .results-rating {
+    width: 110px;
+    padding: 4px 12px;
+    
     font-size: 14px;
     line-height: 21px;
     font-weight: normal;
+    text-align: center;
     color: #666666;
+    background-color: #f2f2f2;
 }
 
 /* ----- Подвал ----- */
@@ -520,7 +631,7 @@ a {
     color: #000000; 
 }
 
-.main-footer .container {
+.main-footer-wrapper {
     display: flex;
     justify-content: space-around;
     padding: 36px 0;
