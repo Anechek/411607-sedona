@@ -18,7 +18,7 @@ body {
     color: #333333;
     text-transform: uppercase;
     
-    background-color: #ffffff;
+    background-color: #f2f2f2;
 }
 
 a {
@@ -137,6 +137,15 @@ input[type="radio"].visually-hidden {
 
 /* ----- Основная навигация ----- */
 
+.container {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    
+    -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+}
+
 .main-navigation {
     position: relative;
     
@@ -148,18 +157,10 @@ input[type="radio"].visually-hidden {
 .main-header-logo {
     position: absolute;
     left: 50%;
+    
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%)
-}
-
-.container {
-    position: relative;
-    width: 1200px;
-    margin: 0 auto;
-    
-    -webkit-box-shadow: 0 0 15px 0 rgba(0, 1, 1, 0.3);
-            box-shadow: 0 0 15px 0 rgba(0, 1, 1, 0.3);
 }
 
 .site-navigation {
@@ -247,8 +248,8 @@ input[type="radio"].visually-hidden {
 }
 
 .slogan-wrapper {
-    padding-top: 61px;
     margin: 0 auto;
+    padding-top: 61px;
     padding-bottom: 28px;
     
     background-color: #ffffff;
@@ -367,19 +368,6 @@ input[type="radio"].visually-hidden {
     background-repeat: no-repeat;
 }
 
-.reasons-number {
-    margin: 25px 0 0;
-}
-
-.reasons-description {
-    padding: 0;
-    margin: 21px 60px 0;
-}
-
-.reasons-bridge .reasons-description {
-     margin: 20px 40px 0;
-}
-
 .reasons-item-header {
     width: 160px;
     margin: 48px auto 0;
@@ -394,9 +382,23 @@ input[type="radio"].visually-hidden {
     color: #ffffff;
 }
 
+.reasons-number {
+    margin: 25px 0 0;
+}
+
+.reasons-description {
+    padding: 0;
+    margin: 21px 60px 0;
+}
+
+.reasons-bridge .reasons-description {
+     margin: 20px 40px 0;
+}
+
 .features-list {
     position: relative;
     z-index: 1;
+    
     width: 100%;
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
@@ -485,13 +487,70 @@ input[type="radio"].visually-hidden {
     width: 568px;
 }
 
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  20%, 60% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+
+  40%, 80% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  20%, 60% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+
+  40%, 80% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+}
+
+.search-hotels-error {
+    -webkit-animation: shake 0.3s;
+            animation: shake 0.3s;
+}
+
 .search-hotels {
     position: absolute;
     top: 86px;
     padding: 55px;
     padding-top: 43px;
-    
+
     background-color: #ffffff;
+ 
+    -webkit-transform-origin: 50% 0%;
+        -ms-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+    -webkit-transition: 0.5s -webkit-transform;
+    transition: 0.5s -webkit-transform;
+    -o-transition: 0.5s transform;
+    transition: 0.5s transform;
+    transition: 0.5s transform, 0.5s -webkit-transform;
+}
+
+.search-hotels.search-hotels-show {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
 }
 
 .modal-search-info {
@@ -559,18 +618,7 @@ input[type="radio"].visually-hidden {
     font: inherit;
     text-transform: uppercase;
     color: #000000;
-}
-
-.modal-search-info input::-ms-input-placeholder {
-    font: inherit;
-    text-transform: uppercase;
-    color: #000000;
-}
-
-.modal-search-info input:-ms-input-placeholder {
-    font: inherit;
-    text-transform: uppercase;
-    color: #000000;
+    opacity: 1;
 }
 
 .modal-search-info-adults,
@@ -649,6 +697,17 @@ input[type="radio"].visually-hidden {
     stroke: #81b3d2;
 }
 
+.map {
+    z-index: -2;
+    width: 100%;
+    height: 593px;
+    
+    background-color: #2b3d49;
+    background-image: url("../img/map.jpg");   
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
 /* ----- Фильтр поиска ----- */
 
 .filters {
@@ -700,14 +759,15 @@ input[type="radio"].visually-hidden {
 
 .filter-option {
     margin-bottom: 26px;
-    padding-left: 40px;     
+    padding-left: 40px;
 }
 
 .filter-option label {
     position: relative;
 
-    display: block;
+    display: inline-block;
 
+    vertical-align: top;
     cursor: pointer;
     -webkit-user-select: none;
        -moz-user-select: none;
@@ -721,12 +781,14 @@ input[type="radio"].visually-hidden {
     position: absolute;
     left: -40px;
     top: 0;
-    width: 23px;
-    height: 23px;
+    width: 24px;
+    height: 24px;
 
     background-image: url("../img/form-checkbox-off.svg");
     background-repeat: no-repeat;
-    background-position: 0 0;
+    background-position: center center;
+    background-size: cover;
+    background-origin: content-box;
 }
 
 .filter-checkbox:checked + label::after {
@@ -735,12 +797,14 @@ input[type="radio"].visually-hidden {
     position: absolute;
     left: -40px;
     top: 0;
-    width: 27px;
-    height: 23px;
+    width: 28px;
+    height: 24px;
   
     background-image: url("../img/form-checkbox-on.svg");
     background-repeat: no-repeat;
-    background-position: 0 0;
+    background-position: center center;
+    background-size: cover;
+    background-origin: content-box;
 }
 
 .filter-checkbox:not(checked):disabled + label::after {
@@ -749,12 +813,14 @@ input[type="radio"].visually-hidden {
     position: absolute;
     left: -40px;
     top: 0;
-    width: 23px;
-    height: 23px;
+    width: 24px;
+    height: 24px;
   
     background-image: url("../img/form-checkbox-off-disabled.svg");
     background-repeat: no-repeat;
-    background-position: 0 0;
+    background-position: center center;
+    background-size: cover;
+    background-origin: content-box;
 }
 
 .filter-checkbox:checked:disabled + label::after {
@@ -763,12 +829,18 @@ input[type="radio"].visually-hidden {
     position: absolute;
     left: -40px;
     top: 0;
-    width: 27px;
-    height: 23px;
+    width: 28px;
+    height: 24px;
   
     background-image: url("../img/form-checkbox-on-disabled.svg");
     background-repeat: no-repeat;
-    background-position: 0 0;
+    background-position: center center;
+    background-size: cover;
+    background-origin: content-box;
+}
+
+.filter-checkbox:focus + label{
+    outline: 3px solid #5496bd;
 }
 
 .filter-price {
@@ -1175,7 +1247,6 @@ input[type="radio"].visually-hidden {
     margin: auto 0 0;
     min-width: 110px;
     
-    
     font-size: 14px;
     line-height: 21px;
     font-weight: normal;
@@ -1192,16 +1263,13 @@ input[type="radio"].visually-hidden {
     bottom: 0;
     width: 100%;
     
+    color: #000000;
+    
     background-color: #ffffff;
+    border-top: 1px solid transparent; 
 }
 .inner-page .main-footer {
     position: relative;
-}
-
-.main-footer {
-    color: #000000;
-    
-    border-top: 1px solid transparent; 
 }
 
 .main-footer-wrapper {
