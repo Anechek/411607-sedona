@@ -1,6 +1,6 @@
 # Личный проект «Седона»
 
-* Студент: [Анна Зубринкина_22](https://up.htmlacademy.ru/htmlcss/20/user/411607).
+* Студент: [Анна Зубринкина](https://up.htmlacademy.ru/htmlcss/20/user/411607).
 * Наставник: [Дмитрий Казанцев](https://htmlacademy.ru/profile/id24186).
 
 ---
